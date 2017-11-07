@@ -1,0 +1,153 @@
+html {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 100;
+}
+
+body {
+  margin: 0;
+}
+h1, h2, h4 {
+  margin-top: 0;
+  font-weight: 100;
+}
+
+img {
+   position: relative; 
+   height: 100%;
+  width: 100%;
+}
+/*HEADER STUFF */
+.container {
+    overflow: hidden;
+    background: rgba(0,0,0,0);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.text-field {
+  text-align: left;
+}
+ 
+
+
+/*ABOUT ME STUFF */
+.aboutme-container {
+    position: relative;
+    z-index: -1;
+}
+
+.aboutme-layer {
+    background-color: rgba(0,0,0,0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.paper-grid {
+    margin: auto;
+    background: rgba(0,0,0,0);
+
+}
+
+.title {
+  font-weight: 400;
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 50px;
+  left: 150px;
+  top: 350px;
+  text-shadow: 2px 2px 4px black;
+}
+
+.image-paper {
+  float: left; 
+  width: 100%; 
+  height: 100%;
+  position: relative;  
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-paper-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 305px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  opacity: 0;  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+  text-align: center;
+  padding-top: 50%;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.image-paper:hover .image-paper-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.image-paper:hover img{
+ filter: blur(9px);
+ transform: scale(1.08); 
+}
+
+
+
+
+
+
+
+
+
+/*Experience Section */
+
+
+
+
+.experience-container {
+    position: relative;
+    z-index: -1;
+}
+
+.experience-layer {
+    background-color: rgba( 40, 98, 82, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.chefhero-layer {
+    background-color: rgba(55,71,79, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.roguewave-layer {
+    background-color: rgba(55,71,79, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
