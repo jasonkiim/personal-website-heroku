@@ -173,7 +173,7 @@ img {
  /*SKILLS STUFF */
  .skills-container {
     overflow-y: scroll;
-    height: 470px;
+    height: 500px;
     text-align: center;
     display: inline-block;
     width: 40%;
