@@ -82,6 +82,21 @@ export const experienceList = [
 
 export const projectList = [
     {
+        img: './emotiontunes.png',
+        title: 'EmotionTunes',
+        dialogTitle: 'EmotionTunes',
+        technologies: 'React, Material-UI, HTML5/CSS3, Meteor.js',
+        description: "A web application that uses Microsoft's Cognitive Service: Emotion API to recognize emotions in images and play a song depending on the emotions detected. Uses Material UI as a main UI framework, as well is built using React for front-end, and Meteor.js for back-end"
+    },
+    {
+        img: './ootc.png',
+        title: '#OOTC',
+        dialogTitle: '#OOTC',
+        technologies: 'React, Bootstrap, HTML5/CSS3, Meteor.js',
+        description: "A web platform that shows celebrity outfits, with customizable header where brand logos are added as search filters. This project was built using React.js and Redux, with Meteor.js back-end support"
+    },
+
+    {
         img: './FinalProject1A/1.png',
         title: 'Color Sorter',
         dialogTitle: 'Color Sorter',
@@ -91,8 +106,8 @@ export const projectList = [
 
     {
         img: './Fuelcell/Preview.png',
-        title: 'Fuelcell',
-        dialogTitle: 'Fuelcell Project',
+        title: 'Fuel Cell Project',
+        dialogTitle: 'Fuel Cell Project',
         technologies: 'TI LaunchPad, Code Blocks',
         description: 'A car powered by hydrogen fuel-cells. This was a school project that combines three of the core courses, Digital Computation, Chemistry, and Mechatronics Engineering, collaborated with two other cohorts. This car was programmed on a TI LaunchPad, and has a line-following algorithm that allows the car to follow the black line in a maze. This project involved lots of trial and error because the maze had various types of barriers the car needed to avoid using integrated sensors.'
     },
