@@ -1,38 +1,28 @@
 import React, { Component}  from 'react';
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import Subheader from 'material-ui/Subheader';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import {skillList} from '../imageLists';
+import { CSSTransitionGroup } from 'react-transition-group'
 
-import Drawer   from  'material-ui/Drawer';
-import AppBar   from  'material-ui/AppBar';
-import Paper    from   'material-ui/Paper';
-
-import LeftDrawer      from './LeftDrawer';
-import RightDrawer     from './RightDrawer';
+import SkillsImage from './SkillsImage';
 
 export default class Skills extends Component {
 
   	render() {
-        const LeftStyles = {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            overflow: 'hidden',
-            height: 'calc(100% - 160px)',
-            top: 160,
-        };
+  		return (
 
-        const RightStyles = {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: 'calc(100% - 160px)',
-            top: 160,
-            margin: 'auto',
-            background: 'rgb(55,71,79)'
-        };
+  			<div className="skills-container">
 
-        return (
-            <div className="skills-container">
-            
+                {skillList.map((skill, i) => (
+                    <SkillsImage
+                        key={i}                       
+                        image={skill.img}
+                        title={skill.title}
+                    />
+                ))}
             </div>
-        );
+  		)
     }
 }

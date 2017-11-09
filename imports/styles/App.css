@@ -9,26 +9,31 @@ html {
 body {
   height: 100%;
   margin: 0;
+    overflow-y:hidden;
 }
 
-h1, h2, h4 {
+h1, h2, h4, h5 {
   margin-top: 0;
+  margin-bottom: 0;
   font-weight: 100;
 }
 
 img { 
+  width: 100%;
+  height: 100%;
 }
 
 /* NAVIGATION */
 .navbar {
-  float: right;
-  margin: 0 auto;
+  text-align: right;
   background: #fff;
+  width: 100%;
+  padding: 0;
 }
 .navbar li {
   display: inline-block;
 }
-.navbar li a {
+.nav-tab {
   display: block;
   padding: 15px;
   text-decoration: none;
@@ -48,8 +53,12 @@ img {
 
 .navbar li a:hover {
   color: #555;
+  cursor: pointer;
 }
 
+.active-nav-tab{
+  color: #000000;
+}
 
 /*MAIN SCREEN STUFF*/
 .main-column {
@@ -70,7 +79,7 @@ img {
     font-size: 20px;
 }
 
-@media only screen and (max-width: 667px)
+@media only screen and (max-width: 1024px)
 { 
   .main-column {
       margin-left: 10%;
@@ -89,7 +98,51 @@ img {
       float: left;
       width: 100%;
   }
+
+  .navbar {
+  text-align: center;
+  }
+
+  .skills-container {
+    width: 100% !important;
+    margin-left: 40px;
+  }
+
+  .image-paper {
+    width: 80% !important;
+  }
+
+  .skills-container .image .image-paper {
+    width: 100% !important;
+  }
 }
+
+@media only screen and (min-width: 320px) and (max-width:375px)
+{
+  .skills-container {
+    width: 100% !important;
+    margin-left: 10px;
+  }
+
+}
+.step-enter {
+  opacity: 0.01;
+}
+
+.step-enter.step-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.step-leave {
+  opacity: 1;
+}
+
+.step-leave.step-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
 
 /*HEADER STUFF */
 .container {
@@ -102,7 +155,166 @@ img {
     background-size:cover;
 }
 
+.container-2 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url(./main2.jpg) no-repeat center;
+    background-size:cover;
+
+}
 .text-field {
   text-align: left;
 }
  
+
+ /*SKILLS STUFF */
+ .skills-container {
+    overflow-y: scroll;
+    height: 470px;
+    text-align: center;
+    display: inline-block;
+    width: 40%;
+ }
+
+ .image {
+    width: 150px;
+    height: 150px;
+    padding: 30px;
+    float: left;
+ }
+ .image-paper {
+    width: 100%;
+    height: 100%;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    margin: 0px;
+}
+
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+/* EXPERIENCE STUFF */
+.experience-container {
+    overflow-y: scroll;
+    height: 320px;
+    text-align: center;
+    display: inline-block;
+    width: 70%;
+}
+
+.experience {
+  display: inline-block;
+  width: 20%;
+
+}
+
+.job-title {
+  font-size: 20px;
+  font-weight: 100;
+}
+.job-description {
+    overflow-y: scroll;
+    height: 200px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: left;
+    font-weight: 200;
+    color: #000000;
+}
+
+
+/* PROJECTS STUFF */
+.projects-container {
+    overflow-y: scroll;
+    height: 500px;
+    text-align: center;
+    display: inline-block;
+    width: 70%;
+}
+
+.project {
+  display: inline-block;
+  width: 20%;
+
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: 100;
+}
+.project-description {
+    overflow-y: scroll;
+    height: 200px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: left;
+    font-weight: 200;
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+
+/*IMAGE BLUR */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.bg,
+.overlay {
+  text-align: center;
+}
+
+img,
+.overlay {
+  transition: .3s all;
+}
+
+.bg {
+  float: left;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bg img {
+  width: 100%;
+  margin-bottom: -4px;
+}
+.bg .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  opacity: 0;
+}
+.bg .overlay h2 {
+  padding-top: 20%;
+  font-weight: 400;
+}
+
+
+.bg:hover .overlay {
+  opacity: 1;
+}
+.bg:hover img {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}

@@ -1,43 +1,26 @@
 import React, { Component}  from 'react';
+import IconButton from 'material-ui/IconButton';
+import Subheader from 'material-ui/Subheader';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import {projectList} from '../imageLists';
 
-import Drawer   from  'material-ui/Drawer';
-import AppBar   from  'material-ui/AppBar';
-import Paper    from   'material-ui/Paper';
-
-import LeftDrawer      from './LeftDrawer';
-import RightDrawer     from './RightDrawer';
-
+import ProjectPaper  from './ProjectPaper';
 export default class Projects extends Component {
 
-  	render() {
-        const LeftStyles = {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            overflow: 'hidden',
-            height: 'calc(100% - 160px)',
-            top: 160,
-        };
-
-        const RightStyles = {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: 'calc(100% - 160px)',
-            top: 160,
-            margin: 'auto',
-            background: 'rgb(55,71,79)'
-        };
-
+    render() {
         return (
-            <div className="aboutme-container">
-                <Drawer width={'50%'} open={this.props.open} containerStyle={LeftStyles}>
-                    <LeftDrawer />
-                </Drawer>
-                <Drawer width={'50%'} openSecondary={true} open={this.props.open} containerStyle={RightStyles}>
-                    <RightDrawer />
-                </Drawer>
+            <div className="projects-container">
+                {projectList.map((project, i) => (
+                    <ProjectPaper
+                        key={i}   
+                        dialogTitle={project.dialogTitle}  
+                        image={project.img}
+                        title={project.title}
+                        technologies={project.technologies}
+                        description={project.description}
+                    />
+                ))}
             </div>
-        );
+        )
     }
 }
