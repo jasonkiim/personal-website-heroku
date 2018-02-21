@@ -1,19 +1,17 @@
-import React, { Component}  from 'react';
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import PersonalWebsite from './PersonalWebsite';
+import React, { Component } from 'react';
+import {CSSTransitionGroup} from 'react-transition-group';
 
 import './styles/App.css';
-import './styles/font-awesome.min.css';
+
+import PersonalWebsite from './PersonalWebsite';
 
 export default class App extends Component {
 
-  render() {
+    render() {
         return (
-      <MuiThemeProvider>
+            <div>
                 <PersonalWebsite />
-      </MuiThemeProvider>
-
+            </div>
         );
     }
 }

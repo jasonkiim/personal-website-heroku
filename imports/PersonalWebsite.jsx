@@ -1,94 +1,152 @@
-import React, {Component}  from 'react';
-import { CSSTransitionGroup } from 'react-transition-group'
+import React, { Component }  from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
 
-import Home 		from './Home';
-import NavBar 		from './NavBar';
-import Skills 		from './skills/Skills';
-import Experience   from './experience/Experience';
-import Projects     from './projects/Projects';
-import classNames                                      from 'classnames';
+import LoadingPage from './LoadingPage';
+import NavBar from './NavBar';
+import Home   from './Home';
+import Experience  from './Experience';
+import Projects from './Projects';
+import Contacts from './Contacts';
 
 export default class PersonalWebsite extends Component {
 
-  componentDidMount() {
-    document.addEventListener('click', this.handleClick);
-  }
-  componentWillUnmount() {
-    document.removeEventListener('click', this.handleClick);
-  }
-
 	state = {
-		step: 1,
-		clicked: false
+		step: 0,
+		clicked: false,
+		fading: true,
+		loadingDone: false
 	};
 
-	handleStepChange = (changedStep) =>
+	handleFadeChange = () =>
 	{
-		this.setState({
-			step: changedStep
-		});
+		this.setState({fading: false});
 	}
 
-  handleClick = (e) => 
-  {
-  	let clickToggle = !this.state.clicked
-    if (this.node.contains(e.target)) {
-    	this.setState({clicked: clickToggle})
-    } else {
-    }
-  }
+	loadOnce = () =>
+	{
+		this.setState({loadingDone: true})
+	}
+
+	handleStepChange = (stepType) => {
+		if (stepType === 'HOME')
+		{
+			this.setState({
+				step: 1,
+				fading: true
+			})
+		}
+
+		else if (stepType === 'EXPERIENCE')
+		{
+			this.setState({
+				step: 2,
+				fading: true
+			})
+		}
+		else if (stepType === 'PROJECTS')
+		{
+			this.setState({
+				step: 3,
+				fading: true
+			})
+		}
+		else if (stepType === 'CONTACT')
+		{
+			this.setState({
+				step: 4,
+				fading: true
+			})
+		}
+	}
 
   	render() {
-        return (
-  		<CSSTransitionGroup
-  		    transitionName="step"
-  		    transitionEnter={true}
-  		    transitionLeave={false}
-		    transitionEnterTimeout={500}
-		>
-
+      return (
 			<div ref={node => this.node = node} className="container" key={0}>
-		        <NavBar 
-		        	{...this.state}
-		        	handleStepChange={this.handleStepChange}
-		        />
-          		<CSSTransitionGroup
-          		    transitionName="step"
-          		    transitionEnter={true}
-          		    transitionLeave={false}
-				    transitionEnterTimeout={500}
-				>
+
 				{/* IIFE in JSX */}
 				{[(() =>
 				{
-					if(this.state.step === 1)
+					if (this.state.step === 0)
 					{
 						return (
-							<Home
-								key={1}
-								{...this.state}
-							/>
+							<div>
+								<LoadingPage
+									{...this.state}
+									loadOnce={this.loadOnce}
+								/>
+						        <NavBar
+						        	{...this.state}
+						        	handleStepChange={this.handleStepChange}
+						        	handleFadeChange={this.handleFadeChange}
+						        	top={"EXPERIENCE"}
+						        	right={"PROJECTS"}
+						        	bottom={"CONTACT"}
+						        	left={"RESUME"}
+						        	delay={3000}
+						        />
+					        	<Home
+									{...this.state}
+								/>
+							</div>
+						);
+					}
+					else if (this.state.step === 1)
+					{
+						return (
+							<div>
+						        <NavBar
+						        	{...this.state}
+						        	handleStepChange={this.handleStepChange}
+						        	handleFadeChange={this.handleFadeChange}
+						        	top={"EXPERIENCE"}
+						        	right={"PROJECTS"}
+						        	bottom={"CONTACT"}
+						        	left={"RESUME"}
+						        	delay={400}
+						        />
+					        	<Home
+											{...this.state}
+										/>
+							</div>
 						);
 					}
 
 					else if (this.state.step === 2)
 					{
 						return(
-							<div style={{textAlign: 'center', width: '100%'}} key = {2}>
-  							<h2> Stack </h2>
-							<Skills
-								{...this.state}
-							/>
+							<div>
+					        <NavBar
+					        	{...this.state}
+					        	handleStepChange={this.handleStepChange}
+					        	handleFadeChange={this.handleFadeChange}
+					        	top={"HOME"}
+					        	right={"PROJECTS"}
+					        	bottom={"CONTACT"}
+					        	left={"RESUME"}
+					        	delay={400}
+					        />
+									<Experience
+										{...this.state}
+									/>
 							</div>
 						);
 					}
 					else if (this.state.step === 3)
 					{
 						return(
-							<div style={{textAlign: 'center', width: '100%'}} key = {3}>
-	  							<h2> Experience </h2>
-								<Experience
-									{...this.state}
+							<div>
+					        <NavBar
+					        	{...this.state}
+					        	handleStepChange={this.handleStepChange}
+					        	handleFadeChange={this.handleFadeChange}
+					        	top={"EXPERIENCE"}
+					        	right={"HOME"}
+					        	bottom={"CONTACT"}
+					        	left={"RESUME"}
+					        	delay={400}
+					        />
+								<Projects
+										{...this.state}
 								/>
 							</div>
 						);
@@ -96,31 +154,25 @@ export default class PersonalWebsite extends Component {
 					else if (this.state.step === 4)
 					{
 						return(
-							<div style={{textAlign: 'center', width: '100%'}} key = {4}>
-  							<h2> Projects </h2>
-							<Projects
-								key={4}
-								{...this.state}
-							/>
-							</div>
-						);
-					}
-					else if (this.state.step === 6)
-					{
-						return(
-							<div style={{textAlign: 'center', width: '100%'}} key = {6}>
-  							<h2> Experience </h2>
-							<Experience
-								key={6}
-								{...this.state}
-							/>
+							<div>
+					        <NavBar
+					        	{...this.state}
+					        	handleStepChange={this.handleStepChange}
+					        	handleFadeChange={this.handleFadeChange}
+					        	top={"EXPERIENCE"}
+					        	right={"PROJECTS"}
+					        	bottom={"HOME"}
+					        	left={"RESUME"}
+					        	delay={400}
+					        />
+									<Contacts
+										{...this.state}
+									/>
 							</div>
 						);
 					}
 				})()]}
-				</CSSTransitionGroup>
 			</div>
-		</CSSTransitionGroup>
         );
     }
 }

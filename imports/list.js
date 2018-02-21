@@ -1,64 +1,3 @@
-export const skillList = [
-    {
-        img: './react.jpg',
-        title: 'React',
-
-    },
-    {
-        img: './redux.jpg',
-        title: 'Redux',
-
-    },
-    {
-        img: './python.jpg',
-        title: 'Python',
-
-    },
-    {
-        img: './meteor.jpg',
-        title: 'Meteor.js',
-
-    },
-    {
-        img: './c++.jpg',
-        title: 'C++',
-    },
-    {
-        img: './c.jpg',
-        title: 'C',
-    },
-    {
-        img: './html5.jpg',
-        title: 'HTML5',
-
-    },
-    {
-        img: './css.jpg',
-        title: 'CSS',
-
-    },
-    {
-        img: './atlassian.png',
-        title: 'Atlassian Tools',
-
-    },
-    {
-        img: './heroku.png',
-        title: 'Heroku',
-
-    },
-    {
-        img: './git.png',
-        title: 'Git',
-
-    },
-    {
-        img: './eclipse.png',
-        title: 'Eclipse',
-
-    }
-]
-
 export const experienceList = [
     {
         img: './chefhero.jpg',
@@ -86,7 +25,8 @@ export const projectList = [
         title: 'EmotionTunes',
         dialogTitle: 'EmotionTunes',
         technologies: 'React, Material-UI, HTML5/CSS3, Meteor.js',
-        description: "A web application that uses Microsoft's Cognitive Service: Emotion API to recognize emotions in images and play a song depending on the emotions detected. Uses Material UI as a main UI framework, as well is built using React for front-end, and Meteor.js for back-end"
+        description: "A web application that uses Microsoft's Cognitive Service: Emotion API to recognize emotions in images and play a song depending on the emotions detected. Uses Material UI as a main UI framework, as well is built using React for front-end, and Meteor.js for back-end",
+        projectLink: "https://github.com/jasonkiim/emotion-tunes"
     },
     {
         img: './ootc.png',
@@ -109,7 +49,8 @@ export const projectList = [
         title: 'Fuel Cell Project',
         dialogTitle: 'Fuel Cell Project',
         technologies: 'TI LaunchPad, Code Blocks',
-        description: 'A car powered by hydrogen fuel-cells. This was a school project that combines three of the core courses, Digital Computation, Chemistry, and Mechatronics Engineering, collaborated with two other cohorts. This car was programmed on a TI LaunchPad, and has a line-following algorithm that allows the car to follow the black line in a maze. This project involved lots of trial and error because the maze had various types of barriers the car needed to avoid using integrated sensors.'
+        description: 'A car powered by hydrogen fuel-cells. This was a school project that combines three of the core courses, Digital Computation, Chemistry, and Mechatronics Engineering, collaborated with two other cohorts. This car was programmed on a TI LaunchPad, and has a line-following algorithm that allows the car to follow the black line in a maze. This project involved lots of trial and error because the maze had various types of barriers the car needed to avoid using integrated sensors.',
+        projectLink: 'https://github.com/jasonkiim/Autonomous-Fuel-Cell'
     },
     {
         img: './MindBound/Preview.png',
@@ -124,7 +65,8 @@ export const projectList = [
         title: 'PushBox',
         dialogTitle: 'Remake of famous classic game, PushBox',
         technologies: 'Java, Eclipse IDE',
-        description: 'The PushBox was my final project for Grade 11 Computer Science. This project was completed in two months, and it is essentially a remake of a famous online classic game, "PushBox". The project was redesigned, and completed on Java, using Ready to Program IDE. This project is graphics based, and all the maps were made with 2D arrays with hitboxes. The maps were dividing into square tiles, and each tiles represented different elements of the map.'
+        description: 'The PushBox was my final project for Grade 11 Computer Science. This project was completed in two months, and it is essentially a remake of a famous online classic game, "PushBox". The project was redesigned, and completed on Java, using Ready to Program IDE. This project is graphics based, and all the maps were made with 2D arrays with hitboxes. The maps were dividing into square tiles, and each tiles represented different elements of the map.',
+        projectLink: 'https://github.com/jasonkiim/PushBox'
     },
     {
         img: './Bonkers/Preview.png',
