@@ -8,13 +8,15 @@
     "mocha": true
   },
   "rules": {
-    "valid-jsdoc": ["error", {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": [<enabled>, { "forbid": [<string>], checkContextTypes: <boolean>, checkChildContextTypes: <boolean> }],
+    "valid-jsdoc": ["off", {
       "requireReturn": true,
       "requireReturnType": true,
       "requireParamDescription": true,
       "requireReturnDescription": true
     }],
-    "require-jsdoc": ["error", {
+    "require-jsdoc": ["off", {
         "require": {
             "FunctionDeclaration": true,
             "MethodDefinition": true,
