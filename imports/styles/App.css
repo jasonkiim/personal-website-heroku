@@ -54,6 +54,7 @@ img {
   margin: 0 auto;
   text-align: center;
   vertical-align: middle;
+  z-index: 0;
 }
 
 /*Stepper Bar*/
@@ -99,7 +100,9 @@ img {
 
 
 /*NAVBAR */
+.nav-bar {
 
+}
 /*Navbar animations */
 
 
@@ -143,7 +146,6 @@ button {
     -webkit-transition: all 1.5s;
     -o-transition: all 1.5s;
     transition: all 1.5s;
-
 }
 
 #waitingRight {
@@ -208,7 +210,7 @@ button {
     -webkit-transition: all 1.5s;
     -o-transition: all 1.5s;
     transition: all 1.5s;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .main-description{
@@ -222,6 +224,7 @@ button {
 .home-description-fading {
   opacity: 0;
 }
+
 .home-description-faded {
   opacity: 1;
   -moz-transition: all 1.5s;
@@ -229,41 +232,6 @@ button {
   -o-transition: all 1.5s;
   transition: all 1.5s;
   text-align: center;
-}
-#change {
-  overflow: hidden;
-  height: 15px;
-  color: black;
-}
-
-#change span {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 7px;
-  position: relative;
-  display: block;
-  animation: myAnim 10s ease infinite 0s;
-  -webkit-animation: myAnim 10s ease infinite 0s;
-}
-
-@keyframes myAnim {
-  0% { top: 0; }
-  20% { top: 0; }
-  35% { top: -20px; }
-  55% { top: -20px; }
-  70% { top: -40px; }
-  90% { top: -40px; }
-  100% { top: -60px; }
-}
-
-@-webkit-keyframes myAnim {
-  0% { top: 0; }
-  20% { top: 0; }
-  35% { top: -20px; }
-  55% { top: -20px; }
-  70% { top: -40px; }
-  90% { top: -40px; }
-  100% { top: -60px; }
 }
 
 /*ABOUT ME STUFF */
@@ -282,8 +250,6 @@ button {
 }
 
 .general-container-fading {
-
-
   opacity: 0;
 }
 
