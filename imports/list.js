@@ -1,3 +1,5 @@
+/*eslint-disable */
+
 export const experienceList = [
     {
         img: './chefhero.jpg',
