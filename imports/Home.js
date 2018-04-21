@@ -10,14 +10,13 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    this.time = setTimeout(() => { this.setState({ fading: false }); }, 3000);
+    this.time = setTimeout(() => { this.setState({ fading: false }); }, 100);
   }
-
 
   render() {
     return (
       <div className={`${this.state.fading ? 'home-fading' : 'home-faded'}`}>
-        <img className="logo" src="./react1.png" alt="asdf" />
+        <img className="logo" src="./logoBlack.png" alt="Asdasdf" />
       </div>
     );
   }

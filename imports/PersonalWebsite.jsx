@@ -49,10 +49,6 @@ export default class PersonalWebsite extends Component {
             if (this.state.step === 0) {
               return (
                 <div>
-                  <LoadingPage
-                    {...this.state}
-                    loadOnce={this.loadOnce}
-                  />
                   <NavBar
                     {...this.state}
                     handleStepChange={this.handleStepChange}
@@ -63,8 +59,9 @@ export default class PersonalWebsite extends Component {
                     left="RESUME"
                     delay={3000}
                   />
-                  <Home
+                  <LoadingPage
                     {...this.state}
+                    loadOnce={this.loadOnce}
                   />
                 </div>
               );

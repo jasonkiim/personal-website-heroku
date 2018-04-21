@@ -17,9 +17,9 @@ export default class Experience extends Component {
       return (
         <div className={`${this.state.fading ? 'general-container-fading' : 'general-container-faded'}`}>
           <div className="experience-container">
-            {experienceList.map(experience => (
+            {experienceList.map((experience, i) => (
               <ExperienceItem
-                key={0}
+                key={i}
                 description_1={experience.description_1}
                 description_2={experience.description_2}
                 description_3={experience.description_3}
