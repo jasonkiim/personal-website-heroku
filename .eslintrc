@@ -14,7 +14,9 @@
       "requireReturn": true,
       "requireReturnType": true,
       "requireParamDescription": true,
-      "requireReturnDescription": true
+      "requireReturnDescription": true,
+       "indent": [2, 2, {"SwitchCase": 1}],
+       "arrow-body-style": ["error", "never"]
     }],
     "require-jsdoc": ["off", {
         "require": {

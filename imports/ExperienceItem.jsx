@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import {experienceList} from './list'
-import ExperienceItem from './ExperienceItem'
+import { experienceList } from './list'
 
-export default class Experience extends Component {
-
+export default class ExperienceItem extends Component {
     state = {
         fading: true,
         change: true,

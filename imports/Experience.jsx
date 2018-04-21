@@ -1,23 +1,21 @@
 import React, { Component } from 'react'
-import {experienceList} from './list'
+import { experienceList } from './list'
 import ExperienceItem from './ExperienceItem'
 
 export default class Experience extends Component {
-
     state = {
-        fading: true,
-        change: true,
+      fading: true,
+      change: true,
     }
 
-    componentDidMount ()
-    {
-        this.time = setTimeout(_ => {
-            this.setState({fading: false})
-        },100)
+    componentDidMount() {
+      this.time = setTimeout(() => {
+        this.setState({ fading: false });
+      }, 100);
 
-        this.time = setTimeout(_ => {
-            this.setState({change: false})
-        },500)
+      this.time = setTimeout(() => {
+        this.setState({ change: false });
+      }, 500);
     }
 
     render() {
