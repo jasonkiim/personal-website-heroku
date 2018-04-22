@@ -1,30 +1,47 @@
+import Modal from 'react-modal';
+
 import React, { Component } from 'react';
+import { projectList } from './list';
+import ProjectsItem from './ProjectsItem';
 
 export default class Projects extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
+    state = {
       fading: true,
-    };
-  }
+    }
 
-  componentDidMount() {
-    this.time = setTimeout(() => { this.setState({ fading: false }); }, 100);
-  }
+    componentDidMount() {
+      this.time = setTimeout(() => {
+        this.setState({ fading: false });
+      }, 100);
+    }
 
-  render() {
-    return (
-      <div className={`${this.state.fading ? 'aboutme-container-fading' : 'aboutme-container-faded'}`}>
-        <div className="aboutme-container">
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-          </p>
-          <br />
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-          </p>
+    render() {
+      return (
+        <div className={`${this.state.fading ? 'exp-projects-container-fading' : 'exp-projects-container'}`}>
+          {projectList.map((project, i) => (
+            <React.Fragment>
+              <button onClick={this.openModal}>Open Modal</button>
+              <Modal
+                isOpen={this.state.modalIsOpen}
+                onAfterOpen={this.afterOpenModal}
+                onRequestClose={this.closeModal}
+                contentLabel="Example Modal"
+              >
+
+                <ProjectsItem
+                  key={i}
+                  description_1={project.description_1}
+                  description_2={project.description_2}
+                  description_3={project.description_3}
+                  description_4={project.description_4}
+                  job={project.job}
+                  image={project.img}
+                  title={project.title}
+                />
+              </Modal>
+            </React.Fragment>
+          ))}
         </div>
-      </div>
-    );
-  }
-
+      );
+    }
 }

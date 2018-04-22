@@ -14,7 +14,7 @@ export default class PersonalWebsite extends Component {
     super(props);
 
     this.state = {
-      step: 0,
+      step: 3,
       clicked: false,
       fading: true,
       loadingDone: false,

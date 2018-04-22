@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExperienceItem = (props) => {
+const ProjectsItem = (props) => {
     return (
       <div className="exp-projects-item">
         <img alt="propsImage" src={props.image} />
@@ -16,4 +16,4 @@ const ExperienceItem = (props) => {
     );
 };
 
-export default ExperienceItem;
+export default ProjectsItem;

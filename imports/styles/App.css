@@ -239,12 +239,12 @@ button {
 
 /*ABOUT ME STUFF */
 
-.general-container-faded {
+.exp-projects-container-faded {
     opacity: 1;
     position: absolute;
     left: 0;
     right: 0;
-    top: 20%;
+    top: 30%;
     -moz-transition: all 1.5s;
     -webkit-transition: all 1.5s;
     -o-transition: all 1.5s;
@@ -252,15 +252,33 @@ button {
     text-align: center;
 }
 
-.general-container-fading {
+.exp-projects-container-fading {
   opacity: 0;
 }
 
-.aboutme-container {
+.exp-projects-container {
+    margin: 100px auto;
     overflow-y: scroll;
     height: 450px;
     text-align: center;
-    display: inline-block;
-    width: 60%;
+    display: block;
+    width: 70%;
 
+}
+
+
+.exp-projects-item {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: rgb(255, 255, 255);
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    border-radius: 2px;
+    height: 150px;
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
 }
