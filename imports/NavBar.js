@@ -4,7 +4,7 @@ export default class NavBar extends Component {
   componentDidMount() {
     this.time = setTimeout(() => { this.props.handleFadeChange(); }, this.props.delay);
   }
-  
+
   componentDidUpdate() {
     this.time = setTimeout(() => { this.props.handleFadeChange(); }, this.props.delay);
   }
@@ -37,7 +37,7 @@ export default class NavBar extends Component {
             className="item"
             id={`${this.props.fading ? 'waitingLeft' : 'left'}`}
             style={{ textOrientation: 'sideways', writingMode: 'vertical-lr' }}
-            href="./JasonKimW2017.pdf"
+            href="./JasonKimF2018.pdf"
             target="_blank"
           >
             {this.props.left}

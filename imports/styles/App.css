@@ -268,7 +268,7 @@ button {
     position: absolute;
     left: 0;
     right: 0;
-    top: 25%;
+    top: 20%;
     -moz-transition: all 1.5s;
     -webkit-transition: all 1.5s;
     -o-transition: all 1.5s;

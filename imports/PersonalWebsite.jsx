@@ -45,7 +45,7 @@ export default class PersonalWebsite extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div className="container" key={0}>
+        <div className="container">
           {/* IIFE in JSX */}
           {[(() => {
               if (this.state.step === 0) {
