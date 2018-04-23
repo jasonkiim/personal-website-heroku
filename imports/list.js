@@ -56,7 +56,7 @@ export const projectList = [
     },
     {
         img: './MindBound/Preview.png',
-        title: 'MEMOR BOUND',
+        title: 'MEMORY BOUND',
         dialogTitle: 'Memory Bound (Calendar Application)',
         technologies: 'Java, Object-Oriented Programming, Eclipse IDE',
         description: 'This project is a user-friendly calender application built using Object-Oriented Programming techniques in Java that allows personal log-in credentials via data encryption with a real-time built-in reminder function accomplished by multithreading. Each users are able to create events by a to-do-list addon on the calendar. This was approached via LinkedLists and Inheritance. The calendar itself was designed using hitboxes of 2D arrays, and the calendar data, such as Years, Months, were approached via Inheritance, LinkedLists, and manipulation of text files.'
@@ -79,7 +79,7 @@ export const projectList = [
     },
     {
         img: './Dice/Preview.png',
-        title: 'Dice Game',
+        title: 'DICE GAME',
         dialogTitle: 'Price is Right, Dice Game',
         technologies: 'Java, Eclipse IDE',
         description: 'This game is a remake of a famous game from a tv show "The Price is Right", redesigned by myself. The player is shown the first digit in the price of a car on a game board with eight screens, and is presented with four oversized dice on a gaming table. The contestant rolls the first die; if the number rolled matches the second digit, the digit is revealed and shown on both screens. Otherwise, the contestant must decide whether the digit is higher or lower than the roll and his or her selection is marked with an outline of lights. If the player gets all guesses right for the digits, they win a prize.'
