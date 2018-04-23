@@ -2,46 +2,53 @@ import Modal from 'react-modal';
 
 import React, { Component } from 'react';
 import { projectList } from './list';
-import ProjectsItem from './ProjectsItem';
+import ProjectsPaper from './ProjectsPaper';
 
 export default class Projects extends Component {
-    state = {
+  constructor() {
+    super();
+
+    this.state = {
       fading: true,
-    }
+      modalIsOpen: false,
+    };
 
-    componentDidMount() {
-      this.time = setTimeout(() => {
-        this.setState({ fading: false });
-      }, 100);
-    }
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
 
-    render() {
-      return (
-        <div className={`${this.state.fading ? 'exp-projects-container-fading' : 'exp-projects-container'}`}>
+  componentDidMount() {
+    this.time = setTimeout(() => {
+      this.setState({ fading: false });
+    }, 100);
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
+
+  render() {
+    return (
+      <div className={`${this.state.fading ? 'exp-projects-container-fading' : 'exp-projects-container-faded'}`}>
+        <div className="exp-projects-container">
           {projectList.map((project, i) => (
-            <React.Fragment>
-              <button onClick={this.openModal}>Open Modal</button>
-              <Modal
-                isOpen={this.state.modalIsOpen}
-                onAfterOpen={this.afterOpenModal}
-                onRequestClose={this.closeModal}
-                contentLabel="Example Modal"
-              >
-
-                <ProjectsItem
-                  key={i}
-                  description_1={project.description_1}
-                  description_2={project.description_2}
-                  description_3={project.description_3}
-                  description_4={project.description_4}
-                  job={project.job}
-                  image={project.img}
-                  title={project.title}
-                />
-              </Modal>
-            </React.Fragment>
+            <ProjectsPaper
+              key={i}
+              dialogTitle={project.dialogTitle}
+              image={project.img}
+              title={project.title}
+              technologies={project.technologies}
+              description={project.description}
+              projectLink={project.projectLink}
+            />
           ))}
         </div>
-      );
-    }
+      </div>
+    );
+  }
 }

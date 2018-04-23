@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import LoadingPage from './LoadingPage';
 import NavBar from './NavBar';
 import Home from './Home';
 import Experience from './Experience';
 import Projects from './Projects';
-import Contacts from './Contacts';
+import Photography from './Photography';
 
 import './styles/App.css';
 
@@ -14,7 +15,7 @@ export default class PersonalWebsite extends Component {
     super(props);
 
     this.state = {
-      step: 3,
+      step: 0,
       clicked: false,
       fading: true,
       loadingDone: false,
@@ -43,103 +44,105 @@ export default class PersonalWebsite extends Component {
 
   render() {
     return (
-      <div className="container" key={0}>
-        {/* IIFE in JSX */}
-        {[(() => {
-            if (this.state.step === 0) {
-              return (
-                <div>
-                  <NavBar
-                    {...this.state}
-                    handleStepChange={this.handleStepChange}
-                    handleFadeChange={this.handleFadeChange}
-                    top="EXPERIENCE"
-                    right="PROJECTS"
-                    bottom="CONTACT"
-                    left="RESUME"
-                    delay={3000}
-                  />
-                  <LoadingPage
-                    {...this.state}
-                    loadOnce={this.loadOnce}
-                  />
-                </div>
-              );
-             } else if (this.state.step === 1) {
-               return (
-                 <div>
-                   <NavBar
-                     {...this.state}
-                     handleStepChange={this.handleStepChange}
-                     handleFadeChange={this.handleFadeChange}
-                     top="EXPERIENCE"
-                     right="PROJECTS"
-                     bottom="CONTACT"
-                     left="RESUME"
-                     delay={400}
-                   />
-                   <Home
-                     {...this.state}
-                   />
-                 </div>
-               );
-             } else if (this.state.step === 2) {
-               return (
-                 <div>
-                   <NavBar
-                     {...this.state}
-                     handleStepChange={this.handleStepChange}
-                     handleFadeChange={this.handleFadeChange}
-                     top="HOME"
-                     right="PROJECTS"
-                     bottom="CONTACT"
-                     left="RESUME"
-                     delay={400}
-                   />
-                   <Experience
-                     {...this.state}
-                   />
-                 </div>
-               );
-             } else if (this.state.step === 3) {
-               return (
-                 <div>
-                   <NavBar
-                     {...this.state}
-                     handleStepChange={this.handleStepChange}
-                     handleFadeChange={this.handleFadeChange}
-                     top="EXPERIENCE"
-                     right="HOME"
-                     bottom="CONTACT"
-                     left="RESUME"
-                     delay={400}
-                   />
-                   <Projects
-                     {...this.state}
-                   />
-                 </div>
-               );
-             } else if (this.state.step === 4) {
-               return (
-                 <div>
-                   <NavBar
-                     {...this.state}
-                     handleStepChange={this.handleStepChange}
-                     handleFadeChange={this.handleFadeChange}
-                     top="EXPERIENCE"
-                     right="PROJECTS"
-                     bottom="HOME"
-                     left="RESUME"
-                     delay={400}
-                   />
-                   <Contacts
-                     {...this.state}
-                   />
-                 </div>
-               );
-             }
-           })()]}
-      </div>
+      <MuiThemeProvider>
+        <div className="container" key={0}>
+          {/* IIFE in JSX */}
+          {[(() => {
+              if (this.state.step === 0) {
+                return (
+                  <div>
+                    <NavBar
+                      {...this.state}
+                      handleStepChange={this.handleStepChange}
+                      handleFadeChange={this.handleFadeChange}
+                      top="EXPERIENCE"
+                      right="PROJECTS"
+                      bottom="PHOTOGRAPHY"
+                      left="RESUME"
+                      delay={3000}
+                    />
+                    <LoadingPage
+                      {...this.state}
+                      loadOnce={this.loadOnce}
+                    />
+                  </div>
+                );
+               } else if (this.state.step === 1) {
+                 return (
+                   <div>
+                     <NavBar
+                       {...this.state}
+                       handleStepChange={this.handleStepChange}
+                       handleFadeChange={this.handleFadeChange}
+                       top="EXPERIENCE"
+                       right="PROJECTS"
+                       bottom="PHOTOGRAPHY"
+                       left="RESUME"
+                       delay={400}
+                     />
+                     <Home
+                       {...this.state}
+                     />
+                   </div>
+                 );
+               } else if (this.state.step === 2) {
+                 return (
+                   <div>
+                     <NavBar
+                       {...this.state}
+                       handleStepChange={this.handleStepChange}
+                       handleFadeChange={this.handleFadeChange}
+                       top="HOME"
+                       right="PROJECTS"
+                       bottom="PHOTOGRAPHY"
+                       left="RESUME"
+                       delay={400}
+                     />
+                     <Experience
+                       {...this.state}
+                     />
+                   </div>
+                 );
+               } else if (this.state.step === 3) {
+                 return (
+                   <div>
+                     <NavBar
+                       {...this.state}
+                       handleStepChange={this.handleStepChange}
+                       handleFadeChange={this.handleFadeChange}
+                       top="EXPERIENCE"
+                       right="HOME"
+                       bottom="PHOTOGRAPHY"
+                       left="RESUME"
+                       delay={400}
+                     />
+                     <Projects
+                       {...this.state}
+                     />
+                   </div>
+                 );
+               } else if (this.state.step === 4) {
+                 return (
+                   <div>
+                     <NavBar
+                       {...this.state}
+                       handleStepChange={this.handleStepChange}
+                       handleFadeChange={this.handleFadeChange}
+                       top="EXPERIENCE"
+                       right="PROJECTS"
+                       bottom="HOME"
+                       left="RESUME"
+                       delay={400}
+                     />
+                     <Photography
+                       {...this.state}
+                     />
+                   </div>
+                 );
+               }
+             })()]}
+        </div>
+      </MuiThemeProvider>
     );
   }
 }

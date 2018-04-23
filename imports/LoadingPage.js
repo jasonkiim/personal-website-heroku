@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import IconButton from 'material-ui/IconButton';
 
 
 export default class LoadingPage extends Component {
@@ -10,6 +11,10 @@ export default class LoadingPage extends Component {
       fading: true,
       change: true,
       loadingFading: true,
+      fadingLogo1: true,
+      fadingLogo2: true,
+      fadingLogo3: true,
+      fadingLogo4: true,
     };
   }
 
@@ -19,10 +24,14 @@ export default class LoadingPage extends Component {
       for (let index = 0; index < 300; index += 1) {
         this.setState({ width: this.state.width + 1 });
       }
-    }, 1000);
+    }, 150);
 
-    this.time = setTimeout(() => { this.setState({ change: false }); }, 4000);
+    this.time = setTimeout(() => { this.setState({ change: false }); }, 4500);
     this.time = setTimeout(() => { this.setState({ fading: false }); }, 3000);
+    this.time = setTimeout(() => { this.setState({ fadingLogo1: false }); }, 4500);
+    this.time = setTimeout(() => { this.setState({ fadingLogo2: false }); }, 5000);
+    this.time = setTimeout(() => { this.setState({ fadingLogo3: false }); }, 5500);
+    this.time = setTimeout(() => { this.setState({ fadingLogo4: false }); }, 6000);
   }
 
 
@@ -35,6 +44,40 @@ export default class LoadingPage extends Component {
         </div>
         <div className={`${this.state.fading ? 'home-fading' : 'home-faded'}`}>
           <img className="logo" src="./logoBlack.png" alt="Asdasdf" />
+          <div className="home-logos">
+            <span className={`${this.state.fadingLogo1 ? 'home-logos-fading' : 'home-logos-faded'}`}>
+              <IconButton
+                iconClassName="fa fa-linkedin"
+                href="https://www.linkedin.com/in/jasonkiim/"
+                tooltip="LinkedIn"
+                target="_blank"
+              />
+            </span>
+            <span className={`${this.state.fadingLogo2 ? 'home-logos-fading' : 'home-logos-faded'}`}>
+              <IconButton
+                iconClassName="fa fa-envelope"
+                href="mailto:e53kim@edu.uwaterloo.ca"
+                tooltip="Contact Me!"
+                target="_blank"
+              />
+            </span>
+            <span className={`${this.state.fadingLogo3 ? 'home-logos-fading' : 'home-logos-faded'}`}>
+              <IconButton
+                iconClassName="fa fa-github"
+                href="https://github.com/jasonkiim"
+                tooltip="View GitHub"
+                target="_blank"
+              />
+            </span>
+            <span className={`${this.state.fadingLogo4 ? 'home-logos-fading' : 'home-logos-faded'}`}>
+              <IconButton
+                iconClassName="fa fa-instagram"
+                href="https://www.instagram.com/jason_kimm/"
+                tooltip="Instagram"
+                target="_blank"
+              />
+            </span>
+          </div>
         </div>
       </React.Fragment>
     );
