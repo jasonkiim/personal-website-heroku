@@ -28,7 +28,8 @@ export default class ProjectsPaper extends React.Component {
     render() {
       const customPaperStyle = {
         height: 150,
-        width: 280,
+        width: '100%',
+        maxWidth: 200,
         margin: 20,
         textAlign: 'center',
         display: 'inline-block',

@@ -48,7 +48,7 @@ img {
 }
 
 .logo {
-  width: 600px !important;
+  width: 50%;
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -57,7 +57,7 @@ img {
 }
 
 .logo-faded {
-  width: 600px !important;
+  width: 50%;
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -186,7 +186,6 @@ button {
     transition: all 1.5s;
     text-orientation: sideways;
     writing-mode: vertical-lr;
-
 }
 
 #waitingBottom {
@@ -259,6 +258,8 @@ button {
 }
 
 .home-logos {
+  width: 40%;
+  margin: 0 auto;
   margin-top: 30px;
   padding-left: 5px;
   padding-right: 5px;
@@ -273,11 +274,16 @@ button {
     left: 0;
     right: 0;
     top: 20%;
+    width: 70%;
+    margin: 0 auto;
     -moz-transition: all 1.5s;
     -webkit-transition: all 1.5s;
     -o-transition: all 1.5s;
     transition: all 1.5s;
     text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 450px;
 }
 
 .exp-projects-container-fading {
@@ -285,12 +291,8 @@ button {
 }
 
 .exp-projects-container {
-    overflow-y: scroll;
-    height: 450px;
     text-align: center;
     display: block;
-    width: 70%;
-    margin: 0 auto;
 }
 
 
@@ -375,3 +377,32 @@ img,
   -webkit-filter: blur(2px);
   filter: blur(2px);
 }
+
+@media only screen and (max-width: 768px)
+{
+  .exp-projects-container-faded {
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 425px)
+{
+  #right {
+    right: 25px;
+  }
+
+  #left {
+      left: 25px;
+  }
+}
+
+@media only screen and (max-width: 375px)
+{
+  .logo {
+    width: 65%;
+  }
+
+  .logo-faded {
+    width: 65%;
+  }
