@@ -50,7 +50,7 @@ export default class PersonalWebsite extends Component {
           {[(() => {
               if (this.state.step === 0) {
                 return (
-                  <div>
+                  <React.Fragment>
                     <NavBar
                       {...this.state}
                       handleStepChange={this.handleStepChange}
@@ -65,11 +65,11 @@ export default class PersonalWebsite extends Component {
                       {...this.state}
                       loadOnce={this.loadOnce}
                     />
-                  </div>
+                  </React.Fragment>
                 );
                } else if (this.state.step === 1) {
                  return (
-                   <div>
+                   <React.Fragment>
                      <NavBar
                        {...this.state}
                        handleStepChange={this.handleStepChange}
@@ -83,11 +83,11 @@ export default class PersonalWebsite extends Component {
                      <Home
                        {...this.state}
                      />
-                   </div>
+                   </React.Fragment>
                  );
                } else if (this.state.step === 2) {
                  return (
-                   <div>
+                   <React.Fragment>
                      <NavBar
                        {...this.state}
                        handleStepChange={this.handleStepChange}
@@ -101,11 +101,11 @@ export default class PersonalWebsite extends Component {
                      <Experience
                        {...this.state}
                      />
-                   </div>
+                   </React.Fragment>
                  );
                } else if (this.state.step === 3) {
                  return (
-                   <div>
+                   <React.Fragment>
                      <NavBar
                        {...this.state}
                        handleStepChange={this.handleStepChange}
@@ -119,11 +119,11 @@ export default class PersonalWebsite extends Component {
                      <Projects
                        {...this.state}
                      />
-                   </div>
+                   </React.Fragment>
                  );
                } else if (this.state.step === 4) {
                  return (
-                   <div>
+                   <React.Fragment>
                      <NavBar
                        {...this.state}
                        handleStepChange={this.handleStepChange}
@@ -137,7 +137,7 @@ export default class PersonalWebsite extends Component {
                      <Photography
                        {...this.state}
                      />
-                   </div>
+                   </React.Fragment>
                  );
                }
              })()]}
