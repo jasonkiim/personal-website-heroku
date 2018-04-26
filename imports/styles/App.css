@@ -131,6 +131,7 @@ img {
   letter-spacing: 10px;
   cursor: pointer;
 }
+
 button {
   background:none;
   border:none;
@@ -273,7 +274,7 @@ button {
     position: absolute;
     left: 0;
     right: 0;
-    top: 20%;
+    top: 15%;
     width: 70%;
     margin: 0 auto;
     -moz-transition: all 1.5s;
@@ -395,6 +396,17 @@ img,
   filter: blur(2px);
 }
 
+@media only screen and (max-width: 768px)
+{
+  .stepper-main-faded {
+    top: 35%;
+  }
+
+  .home-faded {
+    top: 35%;
+  }
+
+}
 @media only screen and (max-width: 425px)
 {
   .exp-projects-container-faded {
@@ -420,6 +432,16 @@ img,
     max-width: 200px;
     height: 120px;
   }
+
+  .item {
+    font-size: 10px;
+  }
+
+  .item:hover {
+    font-size: 10px;
+  }
+
+
 }
 
 @media only screen and (max-width: 375px)
@@ -431,3 +453,10 @@ img,
   .logo-faded {
     width: 65%;
   }
+
+@media only screen and (max-height: 730px)
+{
+  .exp-projects-container-faded {
+      height: 500px;
+  }
+}
