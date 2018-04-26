@@ -37,13 +37,14 @@ export default class NavBar extends Component {
         >
           {this.props.left}
         </a>
-        <button
+        <a
           className="item"
           id={`${this.props.fading ? 'waitingBottom' : 'bottom'}`}
-          onClick={()=>this.props.handleStepChange(this.props.bottom)}
+          href="https://www.instagram.com/jason_kimm/"
+          target="_blank"
         >
           {this.props.bottom}
-        </button>
+        </a>
       </div>
     );
   }
