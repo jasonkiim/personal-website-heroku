@@ -24,14 +24,6 @@ export default class ExperiencePaper extends React.Component {
 
 
     render() {
-      const customPaperStyle = {
-        height: 150,
-        width: 280,
-        margin: 20,
-        textAlign: 'center',
-        display: 'inline-block',
-      };
-
       const customDialogStyle = {
         width: '100%',
         maxWidth: '700px',
@@ -46,15 +38,14 @@ export default class ExperiencePaper extends React.Component {
         />
       ];
       return (
-        <div style={{ display: 'inline-block' }}>
+        <React.Fragment>
           <Paper
-            style={customPaperStyle}
             zDepth={1}
-            className="image-paper"
+            className="exp-image-paper"
             onClick={this.handleOpen}
           >
             <div className="bg">
-              <img src={this.props.image}/>
+              <img src={this.props.image} alt="asdfasd" />
               <div className="overlay">
                 <h2>{this.props.title}</h2>
               </div>
@@ -75,7 +66,7 @@ export default class ExperiencePaper extends React.Component {
               </Dialog>
             </div>
           </Paper>
-        </div>
+        </React.Fragment>
       );
     }
 }

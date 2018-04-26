@@ -29,7 +29,7 @@ export default class ProjectsPaper extends React.Component {
       const customPaperStyle = {
         height: 150,
         width: '100%',
-        maxWidth: 200,
+        maxWidth: 220,
         margin: 20,
         textAlign: 'center',
         display: 'inline-block',
@@ -49,11 +49,10 @@ export default class ProjectsPaper extends React.Component {
         />,
       ];
       return (
-        <div style={{ display: 'inline-block' }}>
+        <React.Fragment>
           <Paper
-            style={customPaperStyle}
             zDepth={1}
-            className="image-paper"
+            className="project-image-paper"
             onClick={this.handleOpen}
           >
             <div className="bg">
@@ -87,7 +86,7 @@ export default class ProjectsPaper extends React.Component {
               </Dialog>
             </div>
           </Paper>
-        </div>
+        </React.Fragment>
       );
     }
 }

@@ -312,7 +312,24 @@ button {
     display: inline-block;
 }
 
+.project-image-paper {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  margin: 20px;
+  text-align:: center;
+  display: inline-block;
+}
 
+.exp-image-paper {
+  width: 100%;
+  max-width: 450px;
+  height: 300px;
+  margin: 20px;
+  text-align:: center;
+  display: inline-block;
+
+}
 
 
 
@@ -364,7 +381,7 @@ img,
   font-family: 'Hvd fonts brandongrotesque', sans-serif;
   font-size: 14px;
   font-weight: 600;
-  padding-top: 20%;
+  padding-top: 30%;
   letter-spacing: 3px;
   color: #ffffff;
 }
@@ -378,22 +395,30 @@ img,
   filter: blur(2px);
 }
 
-@media only screen and (max-width: 768px)
+@media only screen and (max-width: 425px)
 {
   .exp-projects-container-faded {
     width: 100%;
   }
-}
 
-
-@media only screen and (max-width: 425px)
-{
   #right {
     right: 25px;
   }
 
   #left {
       left: 25px;
+  }
+
+  .project-image-paper {
+    width: 100%;
+    max-width: 200px;
+    height: 120px;
+  }
+
+  .exp-image-paper {
+    width: 100%;
+    max-width: 200px;
+    height: 120px;
   }
 }
 
