@@ -108,10 +108,6 @@ img {
 
 
 
-/*NAVBAR */
-.nav-bar {
-
-}
 /*Navbar animations */
 
 
@@ -159,6 +155,8 @@ button {
 #waitingRight {
   right: 0;
   transform: translate(200%, 0%);
+  text-orientation: sideways;
+  writing-mode: vertical-lr;
 }
 
 #right {
@@ -168,11 +166,15 @@ button {
     -webkit-transition: all 1.5s;
     -o-transition: all 1.5s;
     transition: all 1.5s;
+    text-orientation: sideways;
+    writing-mode: vertical-lr;
 }
 
 #waitingLeft {
   left: 0;
   transform: translate(-200%, 0%);
+  text-orientation: sideways;
+  writing-mode: vertical-lr;
 }
 
 #left {
@@ -182,6 +184,8 @@ button {
     -webkit-transition: all 1.5s;
     -o-transition: all 1.5s;
     transition: all 1.5s;
+    text-orientation: sideways;
+    writing-mode: vertical-lr;
 
 }
 

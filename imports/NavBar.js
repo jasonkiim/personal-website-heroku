@@ -22,18 +22,16 @@ export default class NavBar extends Component {
         >
             {this.props.top}
         </button>
-        <button
+        <a
           className="item"
           id={`${this.props.fading ? 'waitingRight' : 'right'}`}
-          style={{textOrientation: "sideways", writingMode:"vertical-lr"}}
           onClick={()=>this.props.handleStepChange(this.props.right)}
         >
           {this.props.right}
-        </button>
+        </a>
         <a
           className="item"
           id={`${this.props.fading ? 'waitingLeft' : 'left'}`}
-          style={{ textOrientation: 'sideways', writingMode: 'vertical-lr' }}
           href="./JasonKimF2018.pdf"
           target="_blank"
         >
